@@ -1,0 +1,5 @@
+env
+venv
+*.pyc
+settings.json
+launch.json
