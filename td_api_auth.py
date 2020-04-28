@@ -76,7 +76,7 @@ def parse_params():
     """
 
     description = """ A Demonstraton of the TDAmeritrade APIs, Specifically this shows
-                how to generate an access code and use it to call an API
+                how to generate an Access Token and use it to call an API
               """
 
     parser = argparse.ArgumentParser(description=description)

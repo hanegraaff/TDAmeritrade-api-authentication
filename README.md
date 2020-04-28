@@ -42,7 +42,7 @@ The authentication URL will follow this pattern:
 https://auth.tdameritrade.com/auth?response_type=code&redirect_uri={URLENCODED REDIRECT URI}&client_id={URLENCODED Consumer Key}%40AMER.OAUTHAP
 ```
 Where:
-* ```redirect_uri``` is the URL where your access token will be sent. We will not use a redirect for this exercise, and so it must set it to the same redirect value of the registered app.
+* ```redirect_uri``` is the URL where your Access Token will be sent. We will not use a redirect for this exercise, and so it must set it to the same redirect value of the registered app.
 * ```client_id``` is the consumer key from your registered application.
 
 So for example, if the ```redirect_uri``` is set to **https://127.0.0.1** and ```client_id``` is set to **MYCONSUMERKEY**, the URL would look like this:
@@ -64,8 +64,8 @@ Once complete, the redirect will fail (assuming nothing is listening on localhos
 
 Also note that the authorization token is URL encoded. You must decode it before using it in the next step.
 
-# Generate an access token and Refresh Token
-Once you URL-decode you Authorization Code, you may request an initial pair of access and refresh tokens. The access token is very short lived (30 min), and can be used to access the protected resources in question, namely the TD APIs. Your Refresh Token, on the other hand is used to generate new access tokens and is longer lived, typically 3 months. You want to save the Refresh Token. Without it, you will not be able to authenticate your app.
+# Generate an Access Token and Refresh Token
+Once you URL-decode you Authorization Code, you may request an initial pair of access and refresh tokens. The Access Token is very short lived (30 min), and can be used to access the protected resources in question, namely the TD APIs. Your Refresh Token, on the other hand is used to generate new Access Tokens and is longer lived, typically 3 months. You want to save the Refresh Token. Without it, you will not be able to authenticate your app.
 
 Note that this step could be fully automated since it’s just a normal API call. For this demonstration it is being done manually, since Authorization Codes can only be used once before they become invalid.
 
@@ -89,7 +89,7 @@ and supply these parameters:
 Your application is now authorized. The artifacts you must save are:
 
 * The Client ID (the Consumer ID)
-* The Refresh Token. You will need this to generate access tokens and interact with the TD APIs
+* The Refresh Token. You will need this to generate Access Tokens and interact with the TD APIs
 
 The Client ID never expires and is tied to your application, while the Refresh Token will be valid for 3 months, after which you must repeat the authorization process outlined in this document.
 
@@ -106,7 +106,7 @@ usage: td_api_auth.py [-h] -client_id CLIENT_ID -refresh_token REFRESH_TOKEN
                       -account_id ACCOUNT_ID
 
 A Demonstraton of the TDAmeritrade APIs, Specifically this shows how to
-generate an access code and use it to call an API
+generate an Access Token and use it to call an API
 
 optional arguments:
   -h, --help            show this help message and exit
