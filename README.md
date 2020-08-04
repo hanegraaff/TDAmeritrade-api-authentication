@@ -78,7 +78,7 @@ and supply these parameters:
 * ```grant_type```: authorization_code
 * ```access_type```: offline
 * ```code```: The Authorization Code from the previous step
-* ```client_id```: {Consumer Key} (e.g. MYCONSUMERKEY@AMER.OAUTHAP)
+* ```client_id```: {Consumer Key} (e.g. MYCONSUMERKEY. don't include the "@AMER.OAUTHAP" suffix)
 * ```redirect_uri```: {REDIRECT URI} (e.g. https://127.0.0.1)
 
 
